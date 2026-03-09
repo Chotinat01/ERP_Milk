@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milkty | Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+  <!-- Top Navbar -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="../img/logo.png" alt="Milkty Logo" class="brand-icon">
+      <span class="brand-name">Milkty</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="page">
+    <section class="login-card">
+      <h1 class="title">Login</h1>
+
+      <form class="form" id="loginForm">
+        <label class="label" for="username">Username</label>
+        <input class="input" id="username" name="username" type="text" required />
+
+        <label class="label" for="password">Password</label>
+        <input class="input" id="password" name="password" type="password" required />
+
+        <div class="row">
+          <a class="link" href="#">ลืมรหัสผ่าน</a>
+        </div>
+
+        <button class="btn" type="submit">Login</button>
+
+        <p class="register">
+          หากคุณยังไม่มีบัญชี
+          <a class="link" href="#">สมัครบัญชี</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <!-- link js (ต้องอยู่ก่อนปิด body) -->
+  <script src="login.js"></script>
+</body>
+
+</html>

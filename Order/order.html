@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milkty | Order</title>
+    <link rel="stylesheet" href="order.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <img src="../img/logo.png" alt="Milkty Logo" class="brand-icon">
+            <span class="brand-name">Milkty</span>
+        </div>
+
+        <!-- เมนู -->
+        <nav class="nav">
+            <a href="../Product/product.html" class="nav-link">สินค้า</a>
+            <a href="../Business/business.html" class="nav-link">Business Model</a>
+            <a href="../Diagram/diagram.html" class="nav-link">แผนผัง</a>
+            <a href="../Team/team.html" class="nav-link">บุคลากร</a>
+            <a href="../Production/production.html" class="nav-link active">สั่งผลิต</a>
+            <a href="../CRM/crm.html" class="nav-link active">CRM</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+
+        <section class="card">
+            <h1 class="page-title">จัดการสั่งซื้อ</h1>
+
+            <!-- สรุปสินค้า -->
+            <div class="product-box">
+                <div class="p-left">
+                    <img id="productImg" src="../img/milk.png" alt="สินค้า" />
+                </div>
+
+                <div class="p-right">
+                    <div class="p-name" id="productName">Milkty นมจืด</div>
+                    <div class="p-price">ราคา: <b>12</b> บาท / กล่อง</div>
+                    <div class="promo">
+                        โปรโมชั่น:
+                        <ul>
+                            <li>สั่ง ≥ 100 กล่อง ลด 5%</li>
+                            <li>สั่ง ≥ 250 กล่อง ลด 10%</li>
+                            <li>สั่ง ≥ 500 กล่อง ลด 15%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ฟอร์มสั่งซื้อ -->
+            <form id="orderForm" class="form">
+                <div class="grid">
+                    <div class="field">
+                        <label for="customerName">ชื่อลูกค้า</label>
+                        <input id="customerName" type="text" placeholder="เช่น ชื่อนามสกุล" required />
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">เบอร์โทร</label>
+                        <input id="phone" type="tel" placeholder="เช่น 0xxxxxxxxx" />
+                    </div>
+
+                    <div class="field full">
+                        <label for="address">ที่อยู่</label>
+                        <textarea id="address" rows="3" placeholder="กรอกที่อยู่จัดส่ง" required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="qty">จำนวนกล่อง</label>
+                        <input id="qty" type="number" min="1" value="1" required />
+                    </div>
+
+                    <div class="field">
+                        <label>คำนวณราคา</label>
+                        <div class="calc">
+                            <div>ราคารวม (ก่อนลด): <span id="subtotal">12</span> บาท</div>
+                            <div>ส่วนลด: <span id="discountRate">0</span>% (<span id="discountAmount">0</span> บาท)
+                            </div>
+                            <div class="total">ยอดสุทธิ: <span id="total">12</span> บาท</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="button" class="btn gray" id="btnCalc">คำนวณราคา</button>
+                    <button type="submit" class="btn orange">ยืนยันการสั่ง</button>
+                </div>
+
+                <p class="note" id="promoNote"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="order.js"></script>
+</body>
+
+</html>

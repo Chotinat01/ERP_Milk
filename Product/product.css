@@ -1,0 +1,124 @@
+* { box-sizing: border-box; }
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff; /* ✅ เปลี่ยนเป็นพื้นหลังขาว */
+}
+
+/* Topbar */
+.topbar{
+  height: 90px;
+  background: #9b86ff;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  position: relative;
+}
+
+/* โลโก้อยู่ซ้าย */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+/* เมนูอยู่กลางจริง ๆ */
+.nav{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover{
+  color: #ffe082;
+}   
+.brand-icon{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.brand-name{
+  color: #fff;
+  font-size: 28px;
+}
+
+/* Layout */
+.wrap{
+  padding: 40px 20px 60px;
+}
+
+.cards{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Card */
+.card{
+  background: #ffffff;
+  border-radius: 20px; /* ลดความโค้ง */
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08); /* เงาเบาลง */
+}
+
+.imgbox{
+  height: 180px; /* ✅ เล็กลง */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgbox img{
+  height: 160px; /* ✅ รูปเล็กลง */
+  object-fit: contain;
+}
+
+.title{
+  margin: 14px 0 10px;
+  color: #0b2c80;
+  font-size: 22px; /* ✅ ตัวอักษรเล็กลง */
+  font-weight: 700;
+}
+
+.desc{
+  margin: 0 0 16px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Button */
+.btn{
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 30px;
+  background: #f57c00;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.btn:hover{
+  background: #e36f00;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .cards{
+    grid-template-columns: 1fr;
+  }
+}

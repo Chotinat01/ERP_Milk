@@ -1,0 +1,191 @@
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+
+/* Topbar */
+.topbar{
+  height: 90px;
+  background: #9b86ff;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  position: relative;
+}
+
+/* โลโก้อยู่ซ้าย */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+/* เมนูอยู่กลางจริง ๆ */
+.nav{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover{
+  color: #ffe082;
+}   
+.brand-icon{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.brand-name{
+  color: #fff;
+  font-size: 28px;
+}
+
+/* Layout */
+.wrap{
+  padding: 40px 20px 60px;
+}
+
+/* Layout */
+.wrap{
+  padding: 28px 18px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  width: min(1050px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  padding: 22px;
+}
+
+.page-title{
+  margin: 6px 0 6px;
+  font-size: 30px;
+  color: #0b2c80;
+}
+
+.subtitle{
+  margin: 0 0 18px;
+  color: #555;
+}
+
+/* Summary */
+.summary{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.sum-box{
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 14px 14px 12px;
+  background: #fafafa;
+}
+
+.sum-label{
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sum-value{
+  font-size: 34px;
+  font-weight: 900;
+  color: #e53935;
+  line-height: 1;
+}
+
+.sum-unit{
+  margin-top: 6px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Table */
+.table-wrap{
+  overflow-x: auto;
+  border: 1px solid #eee;
+  border-radius: 14px;
+}
+
+.team-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;   /* ยังใช้ fixed ได้ แต่ต้องให้คอลัมน์แรกแคบลง */
+  min-width: 0;          /* ✅ เอา min-width ใหญ่ๆ ออก */
+}
+
+.team-table td:first-child,
+.team-table th:first-child{
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* ✅ กัน CSS อื่นมาทำให้คอลัมน์เพี้ยน */
+.team-table tr{ display: table-row !important; }
+.team-table th, .team-table td{ display: table-cell !important; }
+
+.team-table th, .team-table td{
+  padding: 12px 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.team-table thead th{
+  background: #f6f4ff;
+  color: #0b2c80;
+  text-align: left;
+  font-weight: 800;
+}
+
+.num{
+  text-align: left;
+  white-space: nowrap;
+}
+
+.team-table tbody tr:hover{
+  background: #fafafa;
+}
+
+.team-table tfoot td{
+  background: #fff7ea;
+  font-weight: 900;
+}
+
+.tfoot-label{
+  color: #b25a00;
+  font-weight: 900;
+}
+
+.note{
+  margin-top: 12px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 820px){
+  .topbar{ padding: 0 18px; }
+  .nav{ gap: 16px; }
+  .nav-link{ font-size: 16px; }
+  .summary{ grid-template-columns: 1fr; }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milkty | สั่งผลิต</title>
+    <link rel="stylesheet" href="production.css" />
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <img src="../img/logo.png" alt="Milkty Logo" class="brand-icon">
+            <span class="brand-name">Milkty</span>
+        </div>
+
+        <nav class="nav">
+            <a href="../Product/product.html" class="nav-link">สินค้า</a>
+            <a href="../Business/business.html" class="nav-link">Business Model</a>
+            <a href="../Diagram/diagram.html" class="nav-link">แผนผัง</a>
+            <a href="../Team/team.html" class="nav-link">บุคลากร</a>
+            <a href="../Production/production.html" class="nav-link active">สั่งผลิต</a>
+            <a href="../CRM/crm.html" class="nav-link active">CRM</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="production-card">
+            <h1 class="page-title">การผลิต</h1>
+
+            <div class="content-grid">
+                <!-- ฝั่งซ้าย -->
+                <div class="form-side">
+                    <form id="productionForm">
+                        <div class="field">
+                            <label for="flavor">รสชาติ</label>
+                            <select id="flavor" required>
+                                <option value="plain">นมจืด</option>
+                                <option value="strawberry">นมสตรอเบอรี่</option>
+                                <option value="chocolate">นมช็อกโกแลต</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="boxPerRound">จำนวนนมกล่อง</label>
+                            <div class="input-row">
+                                <input type="number" id="boxPerRound" min="1" value="100" required>
+                                <span class="unit">กล่อง/รอบ</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="rounds">จำนวนรอบ</label>
+                            <div class="input-row">
+                                <input type="number" id="rounds" min="1" value="1" required>
+                                <span class="unit">รอบ</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-box">
+                            <p>รสชาติที่เลือก: <span id="selectedFlavor">นมจืด</span></p>
+                            <p>จำนวนต่อรอบ: <span id="showBoxPerRound">100</span> กล่อง</p>
+                            <p>จำนวนรอบ: <span id="showRounds">1</span> รอบ</p>
+                            <p class="total-text">จำนวนผลิตรวม: <span id="totalBoxes">100</span> กล่อง</p>
+                        </div>
+
+                        <button type="submit" class="produce-btn">ผลิต</button>
+                    </form>
+                </div>
+
+                <!-- ฝั่งขวา -->
+                <div class="image-side">
+                    <img id="milkPreview" src="../img/milk.png" alt="Milk Preview" class="milk-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="production.js"></script>
+</body>
+
+</html>

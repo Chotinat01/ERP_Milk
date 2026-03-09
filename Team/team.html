@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milkty | บุคลากร</title>
+    <link rel="stylesheet" href="team.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <img src="../img/logo.png" alt="Milkty Logo" class="brand-icon">
+            <span class="brand-name">Milkty</span>
+        </div>
+
+        <nav class="nav">
+            <a href="../Product/product.html" class="nav-link">สินค้า</a>
+            <a href="../Business/business.html" class="nav-link">Business Model</a>
+            <a href="../Diagram/diagram.html" class="nav-link">แผนผัง</a>
+            <a href="../Team/team.html" class="nav-link">บุคลากร</a>
+            <a href="../Production/production.html" class="nav-link active">สั่งผลิต</a>
+            <a href="../CRM/crm.html" class="nav-link active">CRM</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+        <section class="card">
+            <h1 class="page-title">บุคลากรของบริษัท Milkty</h1>
+            <p class="subtitle">สรุปจำนวนพนักงาน ตำแหน่ง และค่าใช้จ่ายเงินเดือนต่อเดือน</p>
+
+            <!-- Summary -->
+            <div class="summary">
+                <div class="sum-box">
+                    <div class="sum-label">พนักงานทั้งหมด</div>
+                    <div class="sum-value" id="totalPeople">-</div>
+                    <div class="sum-unit">คน</div>
+                </div>
+
+                <div class="sum-box">
+                    <div class="sum-label">รายจ่ายพนักงานรวม</div>
+                    <div class="sum-value" id="totalCost">-</div>
+                    <div class="sum-unit">บาท / เดือน</div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-wrap">
+                <table class="team-table">
+                    <!-- ✅ ล็อกคอลัมน์กันเลื่อน -->
+                    <colgroup>
+                        <col style="width:40%">
+                        <col style="width:20%">
+                        <col style="width:20%">
+                        <col style="width:20%">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>ตำแหน่ง</th>
+                            <th class="num">จำนวน (คน)</th>
+                            <th class="num">เงินเดือน/คน (บาท)</th>
+                            <th class="num">รวม (บาท/เดือน)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="teamBody"></tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td class="tfoot-label">รวมทั้งหมด</td>
+                            <td class="num" id="tfootPeople">-</td>
+                            <td class="num">—</td>
+                            <td class="num" id="tfootCost">-</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <p class="note">
+                * รวมรายจ่ายพนักงาน/เดือน = <b>562,000</b> บาท / เดือน
+            </p>
+        </section>
+    </main>
+
+    <script src="team.js"></script>
+</body>
+
+</html>
