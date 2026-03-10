@@ -1,48 +1,77 @@
-* { box-sizing: border-box; }
-body{
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff; /* ✅ เปลี่ยนเป็นพื้นหลังขาว */
+* {
+    box-sizing: border-box;
 }
 
-/* Topbar */
-.topbar{
-  height: 90px;
-  background: #9b86ff;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  position: relative;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
 }
 
-/* โลโก้อยู่ซ้าย */
-.brand{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 2;
+/* topbar */
+.topbar {
+    height: 88px;
+    background: #9b86ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    gap: 24px;
 }
 
-/* เมนูอยู่กลางจริง ๆ */
-.nav{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 40px;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
-.nav-link{
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  transition: 0.3s;
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
 }
 
-.nav-link:hover{
-  color: #ffe082;
-}   
+.brand-name {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* nav */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.22);
+}
+
 .brand-icon{
   width: 40px;
   height: 40px;
@@ -116,9 +145,32 @@ body{
   background: #e36f00;
 }
 
-/* Responsive */
-@media (max-width: 900px){
-  .cards{
-    grid-template-columns: 1fr;
-  }
+/* responsive */
+@media (max-width: 1100px) {
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .nav-link {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        height: auto;
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
